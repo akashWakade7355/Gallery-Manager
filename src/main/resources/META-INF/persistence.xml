@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+             https://jakarta.ee/xml/ns/persistence
+             https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
+    version="3.2">
+
+    <persistence-unit name="PWIOI">
+
+        <!-- JPA Provider -->
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+
+        <!-- Entity class -->
+        <class>in.ioi.pw.entity.Employee</class>
+
+
+        <properties>
+
+            <!-- Database properties -->
+
+            <property name="jakarta.persistence.jdbc.url"
+                value="jdbc:mysql:///testdb" />
+
+            <property name="jakarta.persistence.jdbc.user" value="admin" />
+
+            <property name="jakarta.persistence.jdbc.password"
+                value="adminpassword" />
+
+            <!-- Hibernate properties -->
+
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+
+            <property name="hibernate.show_sql" value="true" />
+
+            <property name="hibernate.format_sql" value="true" />
+
+            <!-- hikaricp configuration -->
+            
+            <property name="hibernate.connection.provider_class"
+                value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider" />
+
+            <property name="hibernate.hikari.minimumIdle" value="5" />
+
+            <property name="hibernate.hikari.maximumPoolSize" value="10" />
+
+            <property name="hibernate.hikari.idleTimeout" value="30000" />
+
+            <property name="hibernate.hikari.connectionTimeout"
+                value="30000" />
+
+        </properties>
+
+
+    </persistence-unit>
+
+</persistence>
